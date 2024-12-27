@@ -1,0 +1,56 @@
+/* Ensure the entire viewport is filled */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* The main app container */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.hero-section {
+  margin: 0 !important; /* Remove any extra margins */
+
+}
+
+
+.gradient{
+  /* To add gradient to bg */
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+}
+/* Content area grows to push the footer down */
+.content {
+  flex: 1;
+}
+
+/* Footer stays at the bottom */
+.footer {
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  border-top: 2px solid #247a8d;
+  text-align: center;
+  margin-top: 0 !important; 
+}
+
+/* MentorCard.css */
+
+.skill-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #247a8d; /* Customize the color */
+  border-radius: 15px; /* Oval shape */
+}
+
+.badge-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem; /* Customize text size */
+  text-align: center;
+}

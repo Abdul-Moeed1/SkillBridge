@@ -1,0 +1,29 @@
+/* Navbar Styling */
+.navbar {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+  }
+  
+  .nav-link {
+    color: #555;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: #247a8d; /* Matches SkillBridge color */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  .btn-primary {
+    background-color: #247a8d;
+    border-color: #247a8d;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1b5c6d;
+    border-color: #1b5c6d;
+  }
+  
