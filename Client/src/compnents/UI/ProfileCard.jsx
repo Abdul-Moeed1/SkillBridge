@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { changeProfilePic } from "../../Services/Claudinary";
 import { updatePic, updatePicTest } from "../../Services/Users";
 
 export const ProfileCard = (props) => {
     const [editPic, setEditPic] = useState(false);
+    const [imageSetFailed, setimageSetFailed] = useState(false);
     const [imageFile, setImageFile] = useState("");
     const { name, joined, skills , image } = props.data;
+    const navigate = useNavigate();
     console.log("Image data at rendering timr: " , image);
     
     console.log(props);
@@ -18,10 +20,15 @@ export const ProfileCard = (props) => {
                 
                 const ans = await updatePicTest({url});
                 console.log("This is res of setPic" , ans);
+                if(ans.picData.status == 200)
+                {
+                    setimageSetFailed(false);
+                    navigate(0);
+                }
                 
             } catch (error) {
                 console.log("Error due to 3000" , error);
-                
+                setimageSetFailed(true);
             }
         } 
     
@@ -44,6 +51,7 @@ export const ProfileCard = (props) => {
                 await setPic(res.data.url);
             } catch (error) {
                 console.log(error);
+                setimageSetFailed(true);
             }
         }
     
@@ -77,6 +85,9 @@ export const ProfileCard = (props) => {
                             style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", }}
                             onClick={handleImageSubmit}
                         >Set Image </button>
+                        {imageSetFailed && (<small className="text-danger mt-1 d-block">
+                                Image can not be changed.
+                            </small>)}
                     </div>}
                     <button
                         className="btn btn-secondary position-absolute"
