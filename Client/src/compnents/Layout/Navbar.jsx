@@ -75,6 +75,15 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink
+                className="nav-link"
+                activeClassName="active"
+                to="/profile"
+              >
+                Profile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
                 className="btn btn-primary text-white ms-lg-3"
                 to="/login"
               >

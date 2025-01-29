@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { logIn } from "../../Services/Users";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
     const [data, setData] = useState({
         email: "",
         password: "",
     });
+
+    const navigate = useNavigate();
 
     const [loginFailed, setLoginFailed] = useState(false);
 
@@ -30,6 +33,8 @@ const LoginPage = () => {
             // setCookie("token",res.data.token);
             setLoginFailed(false);
             console.log(res);
+            navigate("/profile")
+
 
         } catch (error) {
             console.log(error);

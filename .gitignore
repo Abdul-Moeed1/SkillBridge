@@ -28,3 +28,6 @@ dist-ssr
 *.sw?
 *.log
 *.tmp
+
+
+.env

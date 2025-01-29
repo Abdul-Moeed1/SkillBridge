@@ -14,6 +14,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String,
+        default :"https://via.placeholder.com/150",
+    },
     role: {
         type: String,
         enum: ["learner", "mentor"], // Determines if the user is a learner or a mentor

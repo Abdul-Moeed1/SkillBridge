@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
 import { MentorCard } from "./MentorCard";
 
-const Mentors = () => {
+export const Mentors = () => {
     const mentors = useLoaderData();
 
     if (!mentors) {
@@ -11,7 +11,7 @@ const Mentors = () => {
         )
     }
 
-    console.log(mentors);
+    // console.log(mentors);
 
 
     return (
@@ -47,6 +47,6 @@ const Mentors = () => {
     );
 };
 
-export default Mentors;
+
 
 
